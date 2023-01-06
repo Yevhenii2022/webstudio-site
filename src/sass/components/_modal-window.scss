@@ -117,20 +117,20 @@
     border-color: var(--hover-text-color);
   }
 
-  &:not(:placeholder-shown):valid:required {
-    border-color: rgba(47, 167, 0);
-  }
-
-  &:not(:placeholder-shown):valid:required + .modal__icon {
-    fill: rgba(47, 167, 0);
-  }
-
   &:not(:placeholder-shown):invalid:required {
     border-color: rgb(234, 31, 0);
   }
 
   &:not(:placeholder-shown):invalid:required + .modal__icon {
     fill: rgba(234, 31, 0);
+  }
+
+  &:not(:placeholder-shown):valid:required {
+    border-color: rgba(47, 167, 0);
+  }
+
+  &:not(:placeholder-shown):valid:required + .modal__icon {
+    fill: rgba(47, 167, 0);
   }
 
   @media screen and (min-width: 480px) {
