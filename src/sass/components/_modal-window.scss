@@ -19,30 +19,26 @@
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 5vh;
   left: 50%;
   padding: 40px;
   width: calc(100vw - 30px);
   height: auto;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%) scale(1);
   transition: transform var(--transition-function),
     opacity var(--transition-function);
   background-color: var(--hero-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  overflow-y: auto;
 
   @media screen and (min-width: 480px) {
-    max-width: 450px;
-  }
-
-  @media screen and (min-width: 480px) and (max-width: 1199px) {
-    top: 70%;
-    left: 50%;
+    width: 450px;
   }
 
   @media screen and (min-width: 1200px) {
-    max-width: 528px;
+    width: 528px;
   }
 }
 
@@ -66,11 +62,13 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
-  transition: color var(--transition-function);
+  transition: color var(--transition-function),
+    border-color var(--transition-function);
 
   &:hover,
   &:focus {
     color: var(--hover-text-color);
+    border-color: var(--hover-text-color);
   }
 }
 
@@ -119,6 +117,22 @@
     border-color: var(--hover-text-color);
   }
 
+  &:not(:placeholder-shown):valid:required {
+    border-color: rgba(47, 167, 0);
+  }
+
+  &:not(:placeholder-shown):valid:required + .modal__icon {
+    fill: rgba(47, 167, 0);
+  }
+
+  &:not(:placeholder-shown):invalid:required {
+    border-color: rgb(234, 31, 0);
+  }
+
+  &:not(:placeholder-shown):invalid:required + .modal__icon {
+    fill: rgba(234, 31, 0);
+  }
+
   @media screen and (min-width: 480px) {
     min-width: 370px;
   }
@@ -155,6 +169,10 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border-color var(--transition-function);
+
+  &:not(:placeholder-shown):valid:required {
+    border-color: rgba(47, 167, 0);
+  }
 
   &:focus {
     border-color: var(--hover-text-color);
@@ -259,10 +277,12 @@
   border-radius: 4px;
   cursor: pointer;
   border: none;
-  transition: box-shadow var(--transition-function);
+  transition: box-shadow var(--transition-function),
+    background-color var(--transition-function);
 
   &:hover,
   &:focus {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: #0ff;
   }
 }
