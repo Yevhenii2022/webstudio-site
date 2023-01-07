@@ -117,13 +117,13 @@
     border: 1px solid var(--hover-text-color);
   }
 
-  &:not(:placeholder-shown):invalid:required {
-    border: 1px solid rgb(234, 31, 0);
-  }
+  // &:not(:placeholder-shown):invalid:required {
+  //   border: 1px solid rgb(234, 31, 0);
+  // }
 
-  &:not(:placeholder-shown):invalid:required + .modal__icon {
-    fill: rgba(234, 31, 0);
-  }
+  // &:not(:placeholder-shown):invalid:required + .modal__icon {
+  //   fill: rgba(234, 31, 0);
+  // }
 
   &:not(:placeholder-shown):valid:required {
     border: 1px solid rgba(47, 167, 0);
